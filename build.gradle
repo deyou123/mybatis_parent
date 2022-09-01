@@ -1,0 +1,68 @@
+//配置所有项目公共内容包括父项目
+allprojects {
+    //配置项目信息
+    group 'org.example'
+    version '1.0-SNAPSHOT'
+
+    //配置仓库
+    repositories{
+        mavenLocal()
+        mavenCentral()
+    }
+}
+//配置所有子项目公共部分
+subprojects {
+    //添加插件
+    apply plugin: 'java'
+    apply plugin: 'java-library'
+
+
+
+    //编码环境jdk版本
+    sourceCompatibility = 1.8
+    //编译时jdk版本
+    targetCompatibility = 1.8
+
+    //配置全局依赖版本信息
+    ext {
+        junitVersion = '5.8.2'
+        hsqldbVersion = '2.4.0'
+        mysqlVersion = '8.0.30'
+        mybatisVersion = '3.5.10'
+    }
+    //依赖的配置
+    dependencies {
+
+        implementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+        implementation("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+
+        compileOnly 'org.projectlombok:lombok:1.18.18'
+        annotationProcessor 'org.projectlombok:lombok:1.18.18'
+        implementation "org.mybatis:mybatis:${mybatisVersion}"
+
+    }
+
+}
+
+project(':mybatis-common') {
+
+}
+
+project(':mybatis_001') {
+  /*  dependencies {
+        //依赖子模块
+        api project (':mybatis-common')
+        implementation ("mysql:mysql-connector-java:${mysqlVersion}")
+    }*/
+}
+
+project(':mybatis_002') {
+
+   /* dependencies {
+
+    }*/
+}
+
+
+
+

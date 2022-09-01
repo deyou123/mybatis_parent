@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.example.mapper.ClassMapper">
+    <resultMap id="classMap" type="org.example.entity.Class">
+        <!--property 对应Java类中的属性名，column 对应查询语句中的 列名，起了别名使用别名-->
+        <id property="id" column="cid" ></id>
+        <result property="name" column="cname"></result>
+        <collection property="students" ofType="org.example.entity.Student">
+            <id property="id" column="sid" ></id>
+            <result property="name" column="sname"></result>
+        </collection>
+    </resultMap>
+
+
+
+    <select id="findById" resultMap="classMap">
+        select s.id sid,s.name sname,c.id cid,c.name cname
+        from student s,class c
+        where s.cid = c.id
+          and c.id = #{id}
+    </select>
+</mapper>

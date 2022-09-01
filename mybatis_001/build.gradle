@@ -1,0 +1,5 @@
+
+dependencies {
+    api project (':mybatis-common')
+    implementation ("mysql:mysql-connector-java:${mysqlVersion}")
+}
