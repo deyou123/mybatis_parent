@@ -1,0 +1,9 @@
+
+
+
+dependencies {
+    api project (':mybatis-common')
+    implementation ("mysql:mysql-connector-java:${mysqlVersion}")
+    implementation ("org.mockito:mockito-all:1.10.19")
+
+}

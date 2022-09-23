@@ -5,7 +5,8 @@ allprojects {
     version '1.0-SNAPSHOT'
 
     //配置仓库
-    repositories{
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/public/' }
         mavenLocal()
         mavenCentral()
     }
@@ -15,6 +16,7 @@ subprojects {
     //添加插件
     apply plugin: 'java'
     apply plugin: 'java-library'
+    apply plugin: 'idea'
 
 
 
@@ -25,7 +27,7 @@ subprojects {
 
     //配置全局依赖版本信息
     ext {
-        junitVersion = '5.8.2'
+        junitVersion = '5.9.0'
         hsqldbVersion = '2.4.0'
         mysqlVersion = '8.0.30'
         mybatisVersion = '3.5.10'
@@ -33,9 +35,12 @@ subprojects {
     //依赖的配置
     dependencies {
 
-        implementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
-        implementation("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 
+        implementation("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+        implementation("org.junit.vintage:junit-vintage-engine:${junitVersion}")
+        implementation 'org.junit.platform:junit-platform-runner:1.9.0'
+
+        implementation 'com.alibaba:fastjson:1.2.47'
         compileOnly 'org.projectlombok:lombok:1.18.18'
         annotationProcessor 'org.projectlombok:lombok:1.18.18'
         implementation "org.mybatis:mybatis:${mybatisVersion}"
@@ -62,6 +67,10 @@ project(':mybatis_002') {
 
     }*/
 }
+
+
+
+
 
 
 

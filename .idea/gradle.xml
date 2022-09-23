@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/mybatis-common" />
             <option value="$PROJECT_DIR$/mybatis_001" />
             <option value="$PROJECT_DIR$/mybatis_002" />
+            <option value="$PROJECT_DIR$/mybatis_003" />
           </set>
         </option>
       </GradleProjectSettings>

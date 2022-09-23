@@ -1,3 +1,7 @@
 dependencies {
     api project (':mybatis_001')
+
+    implementation 'tomcat:naming-java:5.0.28'
+    implementation 'tomcat:naming-common:5.0.28'
+    implementation 'commons-logging:commons-logging:1.2'
 }

@@ -1,4 +1,4 @@
-package org.example;
+package org.example.mysql;
 
 import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.session.SqlSession;
@@ -19,7 +19,7 @@ import java.util.List;
  * @author DeYou
  * @date 2022/8/30
  */
-public class TestDemo {
+public class MysqlConnectDemo {
     @BeforeEach
     public void setUp() throws Exception {
         MysqlDBUtils.initData();

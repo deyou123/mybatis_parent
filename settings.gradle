@@ -2,6 +2,5 @@ rootProject.name = 'mybatis_parent'
 include  'mybatis-common'
 include  'mybatis_001'
 include  'mybatis_002'
-
-
+include 'mybatis_003'
 
