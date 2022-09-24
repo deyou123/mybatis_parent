@@ -28,7 +28,7 @@ subprojects {
     //配置全局依赖版本信息
     ext {
         junitVersion = '5.9.0'
-        hsqldbVersion = '2.4.0'
+        hsqldbVersion = '2.7.0'
         mysqlVersion = '8.0.30'
         mybatisVersion = '3.5.10'
     }
@@ -41,10 +41,13 @@ subprojects {
         implementation 'org.junit.platform:junit-platform-runner:1.9.0'
 
         implementation 'com.alibaba:fastjson:1.2.47'
+        implementation 'log4j:log4j:1.2.17'
+        implementation 'commons-beanutils:commons-beanutils:1.9.4'
+        implementation 'javassist:javassist:3.12.1.GA'
         compileOnly 'org.projectlombok:lombok:1.18.18'
         annotationProcessor 'org.projectlombok:lombok:1.18.18'
         implementation "org.mybatis:mybatis:${mybatisVersion}"
-
+        implementation ("mysql:mysql-connector-java:${mysqlVersion}")
     }
 
 }

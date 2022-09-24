@@ -4,4 +4,7 @@ include  'mybatis_001'
 include  'mybatis_002'
 include 'mybatis_003'
 include 'mybatis_004'
+include 'mybatis_005'
+include 'mybatis_006'
+include 'mybatis_007'
 

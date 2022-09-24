@@ -2,8 +2,6 @@ package org.example.common;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.jdbc.ScriptRunner;
-import org.apache.ibatis.logging.Log;
-import org.apache.ibatis.logging.LogFactory;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -28,7 +26,7 @@ public abstract class DbUtils {
             //创建数据库表
             scriptRunner.runScript(Resources.getResourceAsReader("create-table.sql"));
             //初始化数据
-            scriptRunner.runScript(Resources.getResourceAsReader("init-data.sql"));
+            scriptRunner.runScript(Resources.getResourceAsReader( "db/hsql/init-data.sql" ));
         } catch (Exception e) {
             e.printStackTrace();
         }

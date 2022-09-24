@@ -20,7 +20,7 @@ public class ScriptRunnerExample {
         Connection connection = DriverManager.getConnection( "jdbc:hsqldb:mem:mybatis", "ddid", "" );
         ScriptRunner scriptRunner = new ScriptRunner( connection );
         scriptRunner.runScript( Resources.getResourceAsReader( "create-table.sql" ) );
-        scriptRunner.runScript( Resources.getResourceAsReader( "init-data.sql" ) );
+        scriptRunner.runScript( Resources.getResourceAsReader( "db/hsql/init-data.sql" ) );
 
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery( "select * from user" );

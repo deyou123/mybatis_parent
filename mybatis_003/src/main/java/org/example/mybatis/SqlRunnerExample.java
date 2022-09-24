@@ -36,7 +36,7 @@ public class SqlRunnerExample {
         ScriptRunner scriptRunner = new ScriptRunner(connection);
         scriptRunner.setLogWriter(null);
         scriptRunner.runScript( Resources.getResourceAsReader("create-table.sql"));
-        scriptRunner.runScript(Resources.getResourceAsReader("init-data.sql"));
+        scriptRunner.runScript(Resources.getResourceAsReader( "db/hsql/init-data.sql" ));
     }
     @Test
     @DisplayName( "测试查询数据")

@@ -5,7 +5,6 @@ import org.apache.ibatis.jdbc.ScriptRunner;
 import org.apache.ibatis.jdbc.SqlRunner;
 import org.example.common.IOUtils;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -31,7 +30,7 @@ public class Example01 {
             //默认控制台输出，填空控制台不输出
             scriptRunner.setLogWriter(null);
             scriptRunner.runScript(Resources.getResourceAsReader("create-table.sql"));
-            scriptRunner.runScript(Resources.getResourceAsReader("init-data.sql"));
+            scriptRunner.runScript(Resources.getResourceAsReader( "db/hsql/init-data.sql" ));
         } catch (Exception e) {
             e.printStackTrace();
         }

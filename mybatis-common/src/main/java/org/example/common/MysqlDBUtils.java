@@ -21,7 +21,7 @@ public class MysqlDBUtils extends DbUtils {
    static  {
         Properties properties = new Properties();
         try {
-            properties.load( Resources.getResourceAsStream( "jdbc.properties" ) );
+            properties.load( Resources.getResourceAsStream( "db_mysql.properties" ) );
             user = properties.getProperty( "jdbc.user" );
             password = properties.getProperty( "jdbc.password" );
             jdbcUrl = properties.getProperty( "jdbc.jdbcUrl" );
@@ -47,9 +47,9 @@ public class MysqlDBUtils extends DbUtils {
             // 不输出sql日志
             scriptRunner.setLogWriter(null);
             //创建数据库表
-            scriptRunner.runScript( Resources.getResourceAsReader( "db/mybatis.sql" ));
+            scriptRunner.runScript(Resources.getResourceAsReader( "db/mysql/create-table.sql" ));
             //初始化数据
-            //scriptRunner.runScript(Resources.getResourceAsReader("init-data.sql"));
+            scriptRunner.runScript(Resources.getResourceAsReader( "db/mysql/init-data.sql" ));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -58,7 +58,5 @@ public class MysqlDBUtils extends DbUtils {
 
 
 
-   /* public static void main(String[] args) {
-        initData();
-    }*/
+
 }

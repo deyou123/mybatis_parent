@@ -29,7 +29,7 @@ public class Example05 {
         //设置日志 ,关闭日志，默认打印日志在控制台
         scriptRunner.setLogWriter( null );
         //执行脚本,这里使用了mysql 数据库脚本
-        scriptRunner.runScript( Resources.getResourceAsReader( "db/create-user.sql" ) );
+        scriptRunner.runScript( Resources.getResourceAsReader( "db/hsql/create-user.sql" ) );
     }
 
     @Test

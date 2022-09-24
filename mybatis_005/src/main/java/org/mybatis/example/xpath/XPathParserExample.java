@@ -3,6 +3,7 @@ package org.mybatis.example.xpath;
 import javafx.util.converter.DateStringConverter;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.ConvertUtils;
+import org.apache.commons.beanutils.ConvertUtilsBean2;
 import org.apache.commons.beanutils.converters.DateConverter;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.parsing.XNode;
@@ -32,6 +33,7 @@ public class XPathParserExample {
 
         ConvertUtils.register( dateConverter, Date.class);
 
+
         ArrayList<User> users = new ArrayList<>();
 
         List<XNode> nodes =  parser.evalNodes( "/users/*" );
@@ -40,6 +42,8 @@ public class XPathParserExample {
             User user = new User();
             Long id = node.getLongAttribute( "id" );
             BeanUtils.setProperty( user, "id", id );
+
+
             List<XNode> childrenNodes = node.getChildren();
             for (XNode childNode : childrenNodes) {
                 BeanUtils.setProperty( user,
